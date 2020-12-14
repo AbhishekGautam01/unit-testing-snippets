@@ -21,6 +21,7 @@ namespace XUnit_Moq.Tests
         public void ReferYoungApplications()
         {
             Mock<IFrequentFlyerNumberValidator> mockValidator = new Mock<IFrequentFlyerNumberValidator>();
+            mockValidator.Setup(x => x.IsValid(It.IsAny<string>())).Returns(true);
             var sut = new CreditCardApplicationEvaluator(mockValidator.Object);
             var application = new CreditCardApplication { Age = 19 };
             CreditCardApplicationDecision decision = sut.Evaluate(application);
