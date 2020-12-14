@@ -54,6 +54,7 @@ namespace XUnit_Moq.Tests
         public void ReferInvalidFrequentFlyerApplications()
         {
             Mock<IFrequentFlyerNumberValidator> mockValidator = new Mock<IFrequentFlyerNumberValidator>(MockBehavior.Strict);
+            mockValidator.Setup(x => x.IsValid(It.IsAny<string>())).Returns(false);
             var sut = new CreditCardApplicationEvaluator(mockValidator.Object);
             var application = new CreditCardApplication();
             var decision = sut.Evaluate(application);
