@@ -81,7 +81,13 @@ namespace XUnit_Moq.Tests
         {
             Mock<IFrequentFlyerNumberValidator> mockValidator = new Mock<IFrequentFlyerNumberValidator>();
             mockValidator.Setup(x => x.IsValid(It.IsAny<string>())).Returns(true);
-            mockValidator.Setup(x => x.LicenseKey).Returns(GetLicenseKeyExpiryString);
+            var mockLicneseData = new Mock<ILicenseData>();
+            mockLicneseData.Setup(x => x.LicenceKey).Returns("EXPIRED");
+            var mockServiceInfo = new Mock<IServiceInformation>();
+            mockServiceInfo.Setup(x => x.License).Returns(mockLicneseData.Object);
+            mockValidator.Setup(x => x.ServiceInformation).Returns(mockServiceInfo.Object);
+            //mockValidator.Setup(x => x.LicenseKey).Returns(GetLicenseKeyExpiryString);
+            //mockValidator.Setup(x => x.LicenseKey).Returns("EXPIRED");
 
             var sut = new CreditCardApplicationEvaluator(mockValidator.Object);
             var application = new CreditCardApplication { Age = 42 };

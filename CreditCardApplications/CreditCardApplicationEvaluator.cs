@@ -20,7 +20,7 @@ namespace CreditCardApplications
                 return CreditCardApplicationDecision.AutoAccepted;
             }
 
-            if(_validator.LicenseKey == "EXPIRED")
+            if(_validator.ServiceInformation.License.LicenceKey == "EXPIRED")
             {
                 return CreditCardApplicationDecision.ReferredToHuman;
             }
