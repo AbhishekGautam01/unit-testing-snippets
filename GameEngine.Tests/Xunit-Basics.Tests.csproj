@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\GameEngine\GameEngine.csproj" />
+    <ProjectReference Include="..\GameEngine\Xunit-Basics.csproj" />
   </ItemGroup>
 
   <ItemGroup>
