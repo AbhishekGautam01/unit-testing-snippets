@@ -31,7 +31,8 @@ namespace XUnit_Moq.Tests
         public void DeclineLowIncomeApplications()
         {
             Mock<IFrequentFlyerNumberValidator> mockValidator = new Mock<IFrequentFlyerNumberValidator>();
-            mockValidator.Setup(x => x.IsValid("x")).Returns(true);
+            //mockValidator.Setup(x => x.IsValid("x")).Returns(true);
+            mockValidator.Setup(x => x.IsValid(It.IsAny<string>())).Returns(true);
             var sut = new CreditCardApplicationEvaluator(mockValidator.Object);
             var appliction = new CreditCardApplication { GrossAnnualIncome = 19_999, Age = 42, FrequentFlyerNumber = "x" };
             CreditCardApplicationDecision decision = sut.Evaluate(appliction);
