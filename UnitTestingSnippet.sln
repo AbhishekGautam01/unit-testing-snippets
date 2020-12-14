@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NunitDemo.NUnitTests", "Tes
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xunit-Basics", "GameEngine\Xunit-Basics.csproj", "{65AE895D-289D-440A-B6EF-97A123B68CBF}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xunit-Basics.Tests", "GameEngine.Tests\Xunit-Basics.Tests.csproj", "{8AACD2B1-D754-4809-A3E1-B4E88CE67EB2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{65AE895D-289D-440A-B6EF-97A123B68CBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{65AE895D-289D-440A-B6EF-97A123B68CBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{65AE895D-289D-440A-B6EF-97A123B68CBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AACD2B1-D754-4809-A3E1-B4E88CE67EB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AACD2B1-D754-4809-A3E1-B4E88CE67EB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AACD2B1-D754-4809-A3E1-B4E88CE67EB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AACD2B1-D754-4809-A3E1-B4E88CE67EB2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
