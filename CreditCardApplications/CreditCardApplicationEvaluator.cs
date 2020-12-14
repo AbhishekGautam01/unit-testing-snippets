@@ -19,6 +19,12 @@ namespace CreditCardApplications
             {
                 return CreditCardApplicationDecision.AutoAccepted;
             }
+
+            if(_validator.LicenseKey == "EXPIRED")
+            {
+                return CreditCardApplicationDecision.ReferredToHuman;
+            }
+
             var isValidFFNumber = _validator.IsValid(application.FrequentFlyerNumber);
             if (!isValidFFNumber)
             {
