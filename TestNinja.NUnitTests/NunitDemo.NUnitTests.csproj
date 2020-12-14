@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TestNinja\TestNinja.csproj" />
+    <ProjectReference Include="..\TestNinja\NUnitDemo.csproj" />
   </ItemGroup>
 
 </Project>
