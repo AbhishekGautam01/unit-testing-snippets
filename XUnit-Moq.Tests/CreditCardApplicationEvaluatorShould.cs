@@ -62,5 +62,19 @@ namespace XUnit_Moq.Tests
             Assert.Equal(CreditCardApplicationDecision.ReferredToHuman, decision);
 
         }
+
+        [Fact]
+        public void DeclineLowIncomeApplicationOutDemo()
+        {
+            Mock<IFrequentFlyerNumberValidator> mockValidator = new Mock<IFrequentFlyerNumberValidator>(MockBehavior.Strict);
+            bool isvalid = true;
+            mockValidator.Setup(x => x.IsValid(It.IsAny<string>(), out isvalid));
+            var sut = new CreditCardApplicationEvaluator(mockValidator.Object);
+            var application = new CreditCardApplication { Age = 19, GrossAnnualIncome = 19_999};
+            var decision = sut.Evaluate(application);
+            Assert.Equal(CreditCardApplicationDecision.AutoDeclined, decision);
+
+
+        }
     }
 }
